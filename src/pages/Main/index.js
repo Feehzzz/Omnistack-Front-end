@@ -10,16 +10,18 @@ export default class Main extends Component {
     };
     handleSubmit = async e => {
         e.preventDefault();
-        const response = await api.post('boxes', {
+
+        const response = await api.post('/boxes', {
             title: this.state.newBox,
         });
         console.log(response.data);
     };
 
-    handleInputChange = (e) => {
+    handleInputChange = e => {
         this.setState({ newBox: e.target.value });
     };
-  render() {
+
+    render() {
     return (    
        <div id='main-container'>
         <form onSubmit={this.handleSubmit}> 
